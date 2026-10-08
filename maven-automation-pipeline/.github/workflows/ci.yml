@@ -1,6 +1,6 @@
 YAML 
 
-name:DevOpsJavaCIAutomationPipeline 
+name: DevOps Java CI Automation Pipeline 
 
 on: 
 
@@ -16,7 +16,7 @@ jobs:
 
 build-and-validate: 
 
-runs-on:ubuntu-latest 
+runs-on: ubuntu-latest 
 
  
 
@@ -30,13 +30,13 @@ java-version: [17, 21]
 
 steps: 
 
--name:CheckoutSourceCode 
+-name: Checkout Source Code 
 
-uses:actions/checkout@v4 
+uses: actions/checkout@v4 
 
--name:SetupJDK${{matrix.java-version}} 
+-name: Setup JDK ${{matrix.java-version}} 
 
-uses:actions/setup-java@v4 
+uses: actions/setup-java@v4 
 
 with: 
 
@@ -46,6 +46,6 @@ distribution:'temurin'
 
 cache:'maven' 
 
--name:RunAutomatedTestSuites 
+-name: Run Automated Test Suites 
 
-run:mvntest 
+run:mvn test 
