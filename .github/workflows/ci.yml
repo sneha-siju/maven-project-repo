@@ -41,10 +41,10 @@ with:
 
 java-version: ${{matrix.java-version}} 
 
-distribution:'temurin' 
+distribution: 'temurin' 
 
-cache:'maven' 
+cache: 'maven' 
 
 -name: Run Automated Test Suites 
 
-run:mvn test 
+run: mvn test 
