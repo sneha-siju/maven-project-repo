@@ -1,10 +1,18 @@
-@Test
-public void verifySystemBottleneckValidation() {
+package com.devops.lab;
 
-    boolean constraintDefectDetected = false;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-    org.junit.jupiter.api.Assertions.assertFalse(
-        constraintDefectDetected,
-        "CRITICAL: System bottleneck or defect detected in value stream!"
-    );
+public class AppTest {
+
+    @Test
+    public void verifySystemBottleneckValidation() {
+
+        boolean constraintDefectDetected = false;
+
+        assertFalse(
+            constraintDefectDetected,
+            "CRITICAL: System bottleneck or defect detected in value stream!"
+        );
+    }
 }
