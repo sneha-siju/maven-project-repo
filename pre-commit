@@ -1,0 +1,31 @@
+#!/bin/bash 
+
+# --------------------------------------------------------- 
+
+# DevOps Lab 1: Automated Local Code Inspection Gate 
+
+# --------------------------------------------------------- 
+
+ 
+
+echo "🔍 Running automated local pre-commit checks..." 
+
+ 
+
+# Identify if any temporary, non-production lines exist 
+
+if git diff --cached | grep -q "TODO: FIX BEFORE DEPLOY"; then 
+
+    echo "❌ CRITICAL ERROR: Found a 'TODO: FIX BEFORE DEPLOY' marker in staged code." 
+
+    echo "Aborting commit. Please resolve all blocking markers before pushing." 
+
+    exit 1 
+
+fi 
+
+ 
+
+echo "✅ Pre-commit validation passed successfully." 
+
+exit 0
